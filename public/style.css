@@ -1,0 +1,316 @@
+* {
+  box-sizing : border-box;
+  margin:0;
+}
+.wrapper {
+  width: 100%;
+  margin:0;
+}
+.header {
+  border-bottom: 1px solid #e1e1e1;
+  background-color: #fff;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.header  .logo {
+  margin-left:4px;
+  line-height:1.7em;
+  font-size:20px;
+  color:#15161e;
+  font-family: 'Do Hyeon', sans-serif;  
+  float:left;
+}
+.header nav{  
+  float:right;
+  line-height:2.3em;
+  margin-right:40px;
+}
+.header nav ul {
+  list-style:none
+}
+.header nav ul li {
+  display:inline-block;
+  margin-left:15px;
+}
+.header nav ul li a {
+  text-decoration:none;
+  color:#24283d;
+   font-family: 'Do Hyeon', sans-serif; 
+}
+.header nav ul li a:hover {
+  color:#389844
+}
+
+.content {
+  display:flex
+}
+.content .posts {    
+  width:60%;
+  margin-left:100px;
+  margin-top:50px;
+  margin-right:auto;
+  
+}
+.content .posts .post {    
+  margin-bottom:15px; 
+  overflow:auto;   
+}
+
+.content .posts .post .post-date{
+
+  width:50px;
+  float:left;
+}
+.content .posts .post .post-date .post-date-day {
+      font-size: 31px;
+    font-weight: bold;
+    font-family: 'Do Hyeon', sans-serif;
+    color:#575859
+}
+.content .posts .post .post-date .post-date-month {
+    font-family: 'Do Hyeon', sans-serif; 
+    color:#c4c5c6
+}
+.content .posts .post  .post-title a{  
+  text-decoration: none !important;
+color:#389844;
+ font-size:25px;
+ font-family : "Acme" , sans-serif;
+}
+.content .posts .post .post-title .tags{
+
+
+   
+ font-family : "Acme" , sans-serif;
+}
+.content .posts .post .post-title .tags .tag {
+  font-size: 12px;
+  margin-right:5px;
+  color:black;
+  padding-left:5px;
+  padding-right:5px;
+  border:1px solid #389844;
+  border-radius:5px;
+}
+.content .posts .post .post-title .tags .tag:hover {
+  background:#389844;
+  color:white;
+  font-weight: 100;
+}
+
+.content .recents {
+  margin-top:100px;
+  margin-right:100px;    
+  width:200px;
+}
+.content .recents h2 {
+  font-family: "Do Hyeon" ,sans-serif;
+  
+}
+.content .recents ul {
+  list-style: none;
+  padding:0
+}
+.content .recents ul li {
+  display:block;
+  margin-top:5px;
+  
+}
+.content .recents ul li a {
+  text-decoration:none;
+  font-family : "Acme" , sans-serif;
+  font-size:15px;
+}
+.content .recents ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+article {
+  
+  width:70%;
+  margin:60px auto;
+}
+article .meta {
+  margin-bottom:15px;
+}
+article .meta .meta__title {
+  font-size:2em;
+  font-family : "Acme" , sans-serif;
+  color:#389844
+}
+
+article h1,h2,h3,h4,h5,h6 {
+    font-family : "Acme" , sans-serif;
+}
+
+article .meta .meta__date{
+ 
+  color:grey;
+  font-size:12px;
+    font-family : "Acme" , sans-serif;
+}
+
+article p {
+  clear:both;
+     --x-height-multiplier: 0.375;
+  --baseline-multiplier: 0.17;
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  color: rgba(0,0,0,.84);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-align:justify;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+article pre {
+  background: #c5d6c8;
+  width:100%;
+  margin-top:20px;
+  margin-bottom:20px;
+ 
+}
+
+article > blockquote {
+    
+    margin: 10px 0;
+    color: #666;
+    border-left: 3px solid black;
+    padding-left: 10px;
+    font-size:20px;
+    font-style: italic;
+    
+}
+
+code {
+  padding: 2px 5px;
+}
+
+pre {
+  background: #eee;
+  padding: 10px 15px;
+  overflow: auto;
+}
+
+pre > code {
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure figcaption {
+  color: #666;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.sidenav {
+  height:100%;
+  width:100px;
+  position:fixed;
+  z-index: 1;
+  top:0;
+  left:0;
+  background-color: #111;
+  overflow-x:hidden;
+  padding-top:20px;
+}
+
+
+
+
+
+.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+
+}
+img {
+  width: 50px;
+  height: 50px;
+
+}
+.caption {
+  display: block;
+  color:white;
+  padding-top:4px;
+}
+
+.loginform {
+  width:400px;
+  margin:100px auto;
+}
+.loginform h1 {
+  margin:10px;
+  font-family : "Acme" , sans-serif;
+  color:#389844;
+}
+.loginform input {
+  padding:4px;
+  margin:5px;
+  font-family : "Acme" , sans-serif;
+  color:#389844;
+  border:1px solid #389844;
+  border-radius:5px;
+  width:200px;
+  
+}
+.loginform input[type=submit] {
+  background : #389844;
+  color:white;
+  border:none;
+  font-weight:bold;
+  cursor: pointer;
+}
+
+.main {
+  margin-left:150px;
+  margin-top:100px;
+}
+
+table.post-table {
+  width:90%;
+  font-family : "Acme" , sans-serif;
+}
+table.post-table td {
+  border:1px solid green;
+}
+table.post-table th {
+  background:#389844;
+  color:white;
+  height:40px;
+  font-weight:bold;
+}
+table.post-table td{
+  text-align:center;
+  padding:4px;
+}
+table.post-table .td-title{
+  text-align:left;
+ 
+}
+
+
+@media screen and (max-height:450px){
+  .sidenav {padding-top:15px;}
+  .sidenav a {font-size:18px;}
+}
+

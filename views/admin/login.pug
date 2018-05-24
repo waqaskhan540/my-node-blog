@@ -1,0 +1,19 @@
+html
+    head
+        title="admin panel"
+        link(rel='stylesheet', href='/style.css') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Acme') 
+    body
+    
+    if(msg)
+        p #{msg}
+    form(method="post" action="/session/login" class="loginform")
+        h1 Login Please    
+        div
+            input(type="text" name="email" placeholder="your email")
+        
+        div
+            input(type="password" name="password" placeholder="your password")
+
+        div
+        input(type="submit" value="Login")

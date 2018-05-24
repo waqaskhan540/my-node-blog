@@ -1,0 +1,14 @@
+html
+    head
+        title= "My Blog"
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Do+Hyeon') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anton') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Acme') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Muli') 
+        link(rel='icon', href="/favicon.ico")
+        link(rel='stylesheet', href='/style.css')            
+        body
+        div.wrapper
+            include header.pug
+            div.content
+                block content

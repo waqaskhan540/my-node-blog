@@ -1,0 +1,13 @@
+html
+    head
+        title #{article.title}
+         
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Do+Hyeon') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Anton') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Acme') 
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Muli') 
+        link(rel='stylesheet', href='/style.css')       
+              
+        body
+        include shared/header.pug
+        !=article.content

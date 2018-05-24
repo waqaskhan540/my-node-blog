@@ -1,0 +1,20 @@
+extends shared/layout
+block content
+    div.posts                        
+        each article in articles
+            div.post
+                div.post-date
+                    div.post-date-day #{new Date(article.pubdate).getDate()}
+                    div.post-date-month #{new Date(article.pubdate).toLocaleString("en-us",{month:"short"})}
+                div.post-title
+                    a(href=`/posts/${article._id}/${article.title.replace(/ /g,"-")}`) #{article.title}
+                    div.tags
+                        - for (var i =0;i<article.tags.length;i++){
+                            a.tag(href="#") #{article.tags[i]}
+                        -}
+    div.recents                  
+        h2 Recent posts
+        ul  
+            each post in recentPosts
+                li 
+                    a(href=`/posts/${post._id}/${post.title.replace(/ /g,"-")}`) #{post.title} 

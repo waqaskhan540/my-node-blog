@@ -1,0 +1,27 @@
+html
+    head
+        title="admin panel"
+        link(rel='stylesheet', href='/style.css') 
+    body
+    include ../shared/sidenav.pug
+
+    
+    .main
+        h2="Create Post"
+
+        form(method="post" action="/admin/posts/create" name="form-create-post")
+            
+            h4 Title
+            input(type="text" name="title" placeholder = "Title of your post" required)
+
+            h4 Content
+            textarea(name="content" cols="80" rows="20" required)
+
+            h4 Tags
+            input(type="text" name="tags" placeholder = "enter tags (comma separated)" required)
+
+            br
+            input(type="submit" value="Submit")
+
+            if(msg)
+                p #{msg}

@@ -1,0 +1,72 @@
+html
+    head
+        title="admin panel"
+    body
+    if(msg)
+        p #{msg}
+    form(method="post" action="/admin/posts/create")
+        div
+            input(type="text" name="title" placeholder="enter post title")
+        
+        div
+        textarea(name="content" placeholder="post content here")
+
+        div
+        input(type="submit" value="submit")
+    table
+        tr
+            th Title
+            th Publish Date
+            th Tags
+            th Status
+            th Actions
+
+        each post in articles
+            tr
+                td #{post.title}
+                td #{post.pubdate.toLocaleString()}
+                td #{post.tags.toString()}
+                td #{post.status}
+                td 
+                    a(href="#" class='publish' data-id=post._id) Publish 
+                    
+                    a(href="#" class='unpublish' data-id=post._id) Un-publish
+                   
+                    
+
+        script.
+            
+            Array.from(document.querySelectorAll(".publish")).forEach((btn) =>  {
+                
+                btn.addEventListener("click",(e) => {
+                    e.preventDefault();
+                    let postId = e.target.getAttribute("data-id");
+                    fetch(`admin/post/publish/${postId}`)
+                        .then((res) => {
+                            return res.json();
+                        })
+                        .then((json) => {
+                            
+                            alert(json.message);
+                        })
+                })
+            })
+
+            Array.from(document.querySelectorAll(".unpublish")).forEach((btn) =>  {
+                
+                btn.addEventListener("click",(e) => {
+                    e.preventDefault();
+                    let postId = e.target.getAttribute("data-id");
+                    fetch(`admin/post/unpublish/${postId}`)
+                        .then((res) => {
+                            return res.json();
+                        })
+                        .then((json) => {
+                            
+                            alert(json.message);
+                        })
+                })
+            })
+
+
+                

@@ -1,0 +1,9 @@
+image: node:8.9.1
+clone:
+  depth: full
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - git push -f https://heroku:d8843e60-9552-4285-b510-a13efcaecace@git.heroku.com/mwaqas-nblog.git default

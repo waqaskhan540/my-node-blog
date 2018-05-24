@@ -1,0 +1,65 @@
+html
+    head
+        title="admin panel"
+        link(rel='stylesheet', href='/style.css') 
+    body
+    include ../shared/sidenav.pug
+
+
+    .main
+        h2="Posts"
+        table(class="post-table")
+            tr
+                th Title
+                th Publish Date
+                th Tags
+                th Status
+                th Actions
+
+            each post in articles
+                if(post)
+                    tr
+                        td(class="td-title") #{post.title}
+                        td #{post.pubdate.toLocaleString()}
+                        td #{post.tags.toString()}
+                        td #{post.status}
+                        td   
+                            if post.status == 0                                       
+                                a(href="#" class='publish' data-id=post._id) Publish 
+                            else
+                                a(href="#" class='unpublish' data-id=post._id) Un-publish
+
+
+        script.
+            
+            Array.from(document.querySelectorAll(".publish")).forEach((btn) =>  {
+                
+                btn.addEventListener("click",(e) => {
+                    e.preventDefault();
+                    let postId = e.target.getAttribute("data-id");
+                    fetch(`admin/post/publish/${postId}`)
+                        .then((res) => {
+                            return res.json();
+                        })
+                        .then((json) => {
+                            
+                            alert(json.message);
+                        })
+                })
+            })
+
+            Array.from(document.querySelectorAll(".unpublish")).forEach((btn) =>  {
+                
+                btn.addEventListener("click",(e) => {
+                    e.preventDefault();
+                    let postId = e.target.getAttribute("data-id");
+                    fetch(`admin/post/unpublish/${postId}`)
+                        .then((res) => {
+                            return res.json();
+                        })
+                        .then((json) => {
+                            
+                            alert(json.message);
+                        })
+                })
+            })        
